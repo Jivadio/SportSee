@@ -114,6 +114,11 @@ aside {
   height: 64px;
 }
 
+/* Profile Page */
+.dashboard {
+  display: flex;
+}
+
 /* User Information */
 
 .user-information {
@@ -124,4 +129,24 @@ aside {
   font-weight: 400;
   font-size: 18px;
   padding: 30px;
+}
+
+.user-information-title {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.user-information-title span {
+  color: red;
+}
+
+.user-information-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
 }
