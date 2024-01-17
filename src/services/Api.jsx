@@ -1,16 +1,33 @@
+import toast from "react-hot-toast";
+
 const baseURL = "http://localhost:3000/user";
 
-export const getUserInformation = async (userid) => {
+export const getUserInformation = async (id) => {
   try {
-    const response = await fetch(`${baseURL}/${userid}`);
+    const response = await fetch(`${baseURL}/${id}`);
 
     if (response.ok) {
       const data = await response.json();
       return data.data.userInfos;
     } else {
-      console.error("Erreur de requête: ", response.status);
+      toast.error("Erreur lors de la récupération des données.");
     }
   } catch (error) {
-    console.error("Erreur lors de la récupération des données", error);
+    toast.error(`Erreur : ` + error.message);
+  }
+};
+
+export const getUserActivity = async (id) => {
+  try {
+    const response = await fetch(`${baseURL}/${id}/activity`);
+
+    if (response.ok) {
+      const data = await response.json();
+      return data.data;
+    } else {
+      toast.error("Erreur lors de la récupération des données.");
+    }
+  } catch (error) {
+    toast.error(`Erreur : ` + error.message);
   }
 };
