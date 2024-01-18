@@ -31,3 +31,18 @@ export const getUserActivity = async (id) => {
     toast.error(`Erreur : ` + error.message);
   }
 };
+
+export const getUserDataCard = async (id) => {
+  try {
+    const response = await fetch(`${baseURL}/${id}`);
+
+    if (response.ok) {
+      const data = await response.json();
+      return data.data.keyData;
+    } else {
+      toast.error("Erreur lors de la récupération des données.");
+    }
+  } catch (error) {
+    toast.error(`Erreur : ` + error.message);
+  }
+};

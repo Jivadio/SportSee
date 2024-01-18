@@ -125,6 +125,17 @@ aside {
   justify-content: space-between;
 }
 
+.dashboard-bottom {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.dashboard-right {
+  display: block;
+  flex-direction: column;
+}
+
 .activity {
   display: flex;
   position: relative;
@@ -180,4 +191,76 @@ aside {
   line-height: 24px;
   letter-spacing: 0px;
   text-align: left;
+}
+
+/* Card */
+.card {
+  display: flex;
+  margin-bottom: 39px;
+  margin-left: 30px;
+  padding: 32px;
+  border-radius: 5px;
+  background: #fbfbfb;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  font-size: 16px;
+}
+
+.card p {
+  margin: 0;
+}
+
+.card-img {
+  width: 19px;
+  height: 19px;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-icon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin-right: 24px;
+  border-radius: 6px;
+}
+
+.card-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.card-title {
+  color: #282d30;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.card-subtitle {
+  color: #74798c;
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.card-icon.calorie {
+  background: rgba(255, 0, 0, 0.07);
+}
+.card-icon.protein {
+  background: rgba(74, 184, 255, 0.1);
+}
+.card-icon.carbohydrate {
+  background: rgba(249, 206, 35, 0.1);
+}
+.card-icon.lipid {
+  background: rgba(253, 81, 129, 0.1);
 }
