@@ -46,3 +46,18 @@ export const getUserDataCard = async (id) => {
     toast.error(`Erreur : ` + error.message);
   }
 };
+
+export const getUserScore = async (id) => {
+  try {
+    const response = await fetch(`${baseURL}/${id}`);
+
+    if (response.ok) {
+      const data = await response.json();
+      return data.data.todayScore * 100;
+    } else {
+      toast.error("Erreur lors de la récupération des données.");
+    }
+  } catch (error) {
+    toast.error(`Erreur : ` + error.message);
+  }
+};

@@ -264,3 +264,33 @@ aside {
 .card-icon.lipid {
   background: rgba(253, 81, 129, 0.1);
 }
+
+/* Score */
+
+.score {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 258px;
+  height: 263px;
+  background: #fbfbfb;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.score-title {
+  position: absolute;
+  top: 15px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: #20253a;
+  align-self: self-start;
+  padding-left: 30px;
+  margin: unset;
+}

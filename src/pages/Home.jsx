@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 
 import Activity from "../components/Activity";
 import DataCard from "../components/DataCard";
+import Score from "../components/Score";
 
 export default function Home() {
   const id = 12;
@@ -25,7 +26,9 @@ export default function Home() {
         <div className="dashboard">
           <div className="dashboard-activity">
             <Activity />
-            <div className="dashboard-bottom"></div>
+            <div className="dashboard-bottom">
+              <Score />
+            </div>
           </div>
           <div className="dashboard-right">
             <DataCard />
