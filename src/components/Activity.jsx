@@ -30,7 +30,7 @@ const Activity = () => {
 
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
-          data={data?.sessions}
+          data={data}
           barGap={8}
           barCategoryGap={2}
           barSize={7}

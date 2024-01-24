@@ -294,3 +294,42 @@ aside {
   padding-left: 30px;
   margin: unset;
 }
+
+.performance {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 258px;
+  height: 263px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  background: #282d30;
+}
+
+.session {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 258px;
+  height: 263px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
+  background-color: red;
+}
+
+.session h3 {
+  position: absolute;
+  top: 15px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  margin-left: 34px;
+  color: white;
+  z-index: 9999;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+}
