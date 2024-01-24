@@ -3,11 +3,11 @@ import UserInformation from "../components/UserInformation";
 import { getUserInformation } from "../services/Api";
 import toast from "react-hot-toast";
 
-import Activity from "../components/Activity";
+import Activity from "../components/Activity/Activity";
 import DataCard from "../components/DataCard";
 import Score from "../components/Score";
 import RadarPerformance from "../components/RadarPerformance";
-import Session from "../components/Session";
+import Session from "../components/Session/Session";
 
 export default function Home() {
   const id = 12;
@@ -34,7 +34,7 @@ export default function Home() {
               <Score />
             </div>
           </div>
-          <div className="dashboard-right">
+          <div className="">
             <DataCard />
           </div>
         </div>

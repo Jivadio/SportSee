@@ -21,7 +21,7 @@ const DataCard = () => {
   }
 
   return (
-    <div>
+    <div className="dashboard-right">
       <Card
         amount={data?.calorieCount}
         unit="kCal"

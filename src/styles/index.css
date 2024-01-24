@@ -278,7 +278,6 @@ aside {
   background: #fbfbfb;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0212249);
   border-radius: 5px;
-  margin-top: 20px;
 }
 
 .score-title {
@@ -332,4 +331,52 @@ aside {
   z-index: 9999;
   mix-blend-mode: normal;
   opacity: 0.5;
+}
+
+.activity-tooltip {
+  display: block !important;
+  padding: 4px 7px;
+  background-color: red;
+  color: white;
+  font-size: 11px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.session-tooltip {
+  padding: 10px;
+  background-color: white;
+  color: black;
+  font-size: 0.6rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 200px;
+  }
+  .profil {
+    width: 100%;
+    margin: auto;
+  }
+  .card {
+    width: 130px;
+    margin-bottom: 0;
+  }
+
+  .dashboard {
+    display: block;
+    padding: 0px 40px;
+    flex-wrap: wrap;
+  }
+
+  .dashboard-right {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }

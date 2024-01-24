@@ -8,9 +8,10 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { getUserActivity } from "../services/Api";
+import { getUserActivity } from "../../services/Api";
 import { useQuery } from "@tanstack/react-query";
 import toast from "react-hot-toast";
+import ActivityToolTip from "./Tooltip";
 
 const Activity = () => {
   const id = 12;
@@ -61,7 +62,10 @@ const Activity = () => {
             tickCount={3}
           />
           <YAxis hide yAxisId="calories" />
-          <Tooltip cursor={{ fill: "rgba(196, 196, 196, 0.5)" }} />
+          <Tooltip
+            cursor={{ fill: "rgba(196, 196, 196, 0.5)" }}
+            content={<ActivityToolTip active={false} payload={[]} />}
+          />
           <Bar
             name="Poids (kg)"
             dataKey="kilogram"

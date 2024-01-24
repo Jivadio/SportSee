@@ -7,9 +7,11 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { getUserSession } from "../services/Api";
+import { getUserSession } from "../../services/Api";
 import { useQuery } from "@tanstack/react-query";
 import toast from "react-hot-toast";
+import SessionToolTip from "./Tooltip";
+import SessionCursor from "./Cursor";
 
 const Session = () => {
   const id = 12;
@@ -62,6 +64,10 @@ const Session = () => {
               <stop offset="100%" stopColor="rgba(255, 255, 255, 1)" />
             </linearGradient>
           </defs>
+          <Tooltip
+            cursor={<SessionCursor />}
+            content={<SessionToolTip active={false} payload={[]} />}
+          />
         </LineChart>
       </ResponsiveContainer>
     </div>
