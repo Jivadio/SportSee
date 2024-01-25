@@ -38,12 +38,12 @@ export const mockUserPerformance = {
     6: "intensity",
   },
   data: [
-    { value: 10, kind: 1 },
-    { value: 20, kind: 2 },
-    { value: 30, kind: 3 },
-    { value: 40, kind: 4 },
-    { value: 50, kind: 5 },
-    { value: 60, kind: 6 },
+    { value: 2, kind: 1 },
+    { value: 75, kind: 2 },
+    { value: 100, kind: 3 },
+    { value: 2, kind: 4 },
+    { value: 75, kind: 5 },
+    { value: 100, kind: 6 },
   ],
 };
 
