@@ -1,6 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import UserInformation from "../components/UserInformation";
-import { getUserInformation } from "../services/Api";
+import {
+  getUserInformation,
+  getUserActivity,
+  getUserPerformance,
+  getUserSession,
+} from "../services/Api";
 import toast from "react-hot-toast";
 
 import Activity from "../components/Activity/Activity";
@@ -12,7 +17,7 @@ import Session from "../components/Session/Session";
 export default function Home() {
   const id = 12;
 
-  const { data, isError, error } = useQuery({
+  const { data, isError } = useQuery({
     queryKey: ["userInformation", id],
     queryFn: () => getUserInformation(id),
   });
@@ -21,21 +26,48 @@ export default function Home() {
     toast.error("Erreur lors de la récupération des données.");
   }
 
+  const { data: dataActivity, isError: isErrorActivity } = useQuery({
+    queryKey: ["userActivity", id],
+    queryFn: () => getUserActivity(id),
+  });
+
+  if (isErrorActivity) {
+    toast.error("Erreur lors de la récupération des données.");
+  }
+
+  const { data: dataSession, isError: isErrorSession } = useQuery({
+    queryKey: ["userSession", id],
+    queryFn: () => getUserSession(id),
+  });
+
+  if (isErrorSession) {
+    toast.error("Erreur lors de la récupération des données.");
+  }
+
+  const { data: dataPerf, isError: isErrorPerf } = useQuery({
+    queryKey: ["userPerformance", id],
+    queryFn: () => getUserPerformance(id),
+  });
+
+  if (isErrorPerf) {
+    toast.error("Erreur lors de la récupération des données.");
+  }
+
   return (
     <>
       <div className="profil container">
-        <UserInformation firstname={data?.firstName} />
+        <UserInformation firstname={data?.userInfos?.firstName} />
         <div className="dashboard">
           <div className="dashboard-activity">
-            <Activity />
+            <Activity data={dataActivity} />
             <div className="dashboard-bottom">
-              <Session />
-              <RadarPerformance />
-              <Score />
+              <Session data={dataSession} />
+              <RadarPerformance data={dataPerf} />
+              <Score score={data?.todayScore * 100} />
             </div>
           </div>
           <div className="">
-            <DataCard />
+            <DataCard keydata={data?.keyData} />
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Bar,
   BarChart,
@@ -8,23 +9,10 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { getUserActivity } from "../../services/Api";
-import { useQuery } from "@tanstack/react-query";
-import toast from "react-hot-toast";
 import ActivityToolTip from "./Tooltip";
 
-const Activity = () => {
-  const id = 12;
-
-  const { data, isError, error } = useQuery({
-    queryKey: ["userActivity", id],
-    queryFn: () => getUserActivity(id),
-  });
-
-  if (isError) {
-    toast.error("Erreur lors de la récupération des données.");
-  }
-
+const Activity = ({ data }) => {
+  console.log(data);
   return (
     <div className="activity">
       <h2 className="activity-title">Activité quotidienne</h2>

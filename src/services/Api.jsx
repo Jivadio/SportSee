@@ -1,5 +1,3 @@
-import toast from "react-hot-toast";
-
 const baseURL = "http://localhost:3000/user";
 
 export const getUserInformation = async (id) => {
@@ -8,12 +6,10 @@ export const getUserInformation = async (id) => {
 
     if (response.ok) {
       const data = await response.json();
-      return data.data.userInfos;
-    } else {
-      toast.error("Erreur lors de la récupération des données.");
+      return data.data;
     }
   } catch (error) {
-    toast.error(`Erreur : ` + error.message);
+    console.log(error);
   }
 };
 
@@ -23,48 +19,15 @@ export const getUserActivity = async (id) => {
 
     if (response.ok) {
       const data = await response.json();
-
       const transformedSessions = data.data.sessions.map((session, index) => ({
         ...session,
         day: index + 1,
       }));
 
       return transformedSessions;
-    } else {
-      toast.error("Erreur lors de la récupération des données.");
     }
   } catch (error) {
-    toast.error(`Erreur : ${error.message}`);
-  }
-};
-
-export const getUserDataCard = async (id) => {
-  try {
-    const response = await fetch(`${baseURL}/${id}`);
-
-    if (response.ok) {
-      const data = await response.json();
-      return data.data.keyData;
-    } else {
-      toast.error("Erreur lors de la récupération des données.");
-    }
-  } catch (error) {
-    toast.error(`Erreur : ` + error.message);
-  }
-};
-
-export const getUserScore = async (id) => {
-  try {
-    const response = await fetch(`${baseURL}/${id}`);
-
-    if (response.ok) {
-      const data = await response.json();
-      return data.data.todayScore * 100;
-    } else {
-      toast.error("Erreur lors de la récupération des données.");
-    }
-  } catch (error) {
-    toast.error(`Erreur : ` + error.message);
+    console.log(error);
   }
 };
 
@@ -94,11 +57,10 @@ export const getUserPerformance = async (id) => {
         return [];
       }
     } else {
-      toast.error("Erreur lors de la récupération des données.");
       return [];
     }
   } catch (error) {
-    toast.error(`Erreur : ${error.message}`);
+    console.log(error);
     return [];
   }
 };
@@ -126,10 +88,8 @@ export const getUserSession = async (id) => {
       }));
 
       return transformedSessions;
-    } else {
-      toast.error("Erreur lors de la récupération des données.");
     }
   } catch (error) {
-    toast.error(`Erreur : ${error.message}`);
+    console.log(error);
   }
 };

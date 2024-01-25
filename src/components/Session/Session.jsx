@@ -1,3 +1,4 @@
+import React from "react";
 import {
   CartesianGrid,
   Line,
@@ -7,24 +8,10 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { getUserSession } from "../../services/Api";
-import { useQuery } from "@tanstack/react-query";
-import toast from "react-hot-toast";
 import SessionToolTip from "./Tooltip";
 import SessionCursor from "./Cursor";
 
-const Session = () => {
-  const id = 12;
-
-  const { data, isError, error } = useQuery({
-    queryKey: ["getUserSession", id],
-    queryFn: () => getUserSession(id),
-  });
-
-  if (isError) {
-    toast.error("Erreur lors de la récupération des données.");
-  }
-
+const Session = ({ data }) => {
   return (
     <div className="session">
       <h3 className="session-title">

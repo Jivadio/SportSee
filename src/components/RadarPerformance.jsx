@@ -7,22 +7,8 @@ import {
   RadarChart,
   ResponsiveContainer,
 } from "recharts";
-import { getUserPerformance } from "../services/Api";
-import { useQuery } from "@tanstack/react-query";
-import toast from "react-hot-toast";
 
-const RadarPerformance = () => {
-  const id = 12;
-
-  const { data, isError } = useQuery({
-    queryKey: ["userPerformance", id],
-    queryFn: () => getUserPerformance(id),
-  });
-
-  if (isError) {
-    toast.error("Erreur lors de la récupération des données.");
-  }
-
+const RadarPerformance = ({ data }) => {
   return (
     <div className="performance">
       <ResponsiveContainer width="100%" height="100%">
