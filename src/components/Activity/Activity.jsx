@@ -12,7 +12,6 @@ import {
 import ActivityToolTip from "./Tooltip";
 
 const Activity = ({ data }) => {
-  console.log(data);
   return (
     <div className="activity">
       <h2 className="activity-title">Activité quotidienne</h2>
