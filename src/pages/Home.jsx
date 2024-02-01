@@ -22,6 +22,10 @@ export default function Home() {
     queryFn: () => getUserInformation(id),
   });
 
+  const calculatedScore = data?.todayScore
+    ? data.todayScore * 100
+    : data?.score * 100;
+
   if (isError) {
     toast.error("Erreur lors de la récupération des données.");
   }
@@ -63,7 +67,7 @@ export default function Home() {
             <div className="dashboard-bottom">
               <Session data={dataSession} />
               <RadarPerformance data={dataPerf} />
-              <Score score={data?.todayScore * 100} />
+              <Score score={calculatedScore} />
             </div>
           </div>
           <div className="">

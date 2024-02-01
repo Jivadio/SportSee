@@ -7,7 +7,7 @@ import {
 
 const baseURL = "http://localhost:3000/user";
 
-const useMock = true;
+const useMock = false;
 
 export const getUserInformation = async (id) => {
   if (useMock) {
